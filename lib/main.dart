@@ -4,9 +4,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:proj21/Models/Note_model.dart';
 import 'package:proj21/cubits/notes_cubit/notes_cubit.dart';
 import 'package:proj21/simple_bloc_observer.dart';
-
 import 'views/widgets/notes.dart';
-
 void main() async {
   await Hive.initFlutter();
   Bloc.observer = SimpleBlocOberver();
@@ -15,10 +13,8 @@ void main() async {
   await Hive.openBox<NoteModel>('notes_box');
   runApp(const NotesApp());
 }
-
 class NotesApp extends StatelessWidget {
   const NotesApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
